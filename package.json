@@ -1,0 +1,33 @@
+{
+  "name": "server_portfolio",
+  "version": "1.0.0",
+  "description": "Backend For My Personal Portfolio FrontEnd",
+  "keywords": [
+    "node",
+    "express",
+    "mongodb"
+  ],
+  "homepage": "https://github.com/IdemudiaMahie/server_portfolio#readme",
+  "bugs": {
+    "url": "https://github.com/IdemudiaMahie/server_portfolio/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IdemudiaMahie/server_portfolio.git"
+  },
+  "license": "MIT",
+  "author": "Osamahiemen Idemudia",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "http-errors": "^2.0.1",
+    "mongoose": "^9.2.1",
+    "morgan": "^1.10.1"
+  }
+}
