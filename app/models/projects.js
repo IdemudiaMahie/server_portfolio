@@ -3,8 +3,8 @@ let mongoose = require('mongoose');
 let projectsModel = mongoose.Schema(
     {
         title: String,
+        completion: Date,
         description: String,
-        completion: Date
     },
     {
         collection: "projects"
