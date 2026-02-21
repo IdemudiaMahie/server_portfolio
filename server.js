@@ -1,50 +1,12 @@
-const express = require('express');
-const createError = require('http-errors');
-const logger = require('morgan');
-const cors = require('cors');
-const app = express();
+let http = require('http');
 
-const dbConfig = require('./config/mongodb');
+let dbConfig = require('./config/mongodb');
+let app = require('./config/express');
 
 dbConfig().catch(console.dir);
 
-app.use(logger('dev'));
+let server = http.createServer(app);
 
-app.use(cors());
+server.listen(3000);
 
-function notfound (req, res, next){
-
-    res.end("Not found!")
-}
-
-function goodbye (req, res, next){
-
-    res.end("Good Bye!")
-}
-
-const temp = {
-    name: 'John Smith',
-    email: 'john@smith.ca'
-}
-
-app.get('/user/getuser', (req, res) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.status(201)
-    res.json(temp);
-})
-
-app.get('/email/:address', (req, res) => {
-    console.log(req.params.address);
-//   res.send('Email: ' + req.params.email);
-    res.redirect('/hello')
-})
-
-app.use(logger);
-app.use('/hello', (req, res, next) => {
-    res.setHeader('Content-Type', 'text/plain');
-    res.send('Hello World!');
-});
-app.use('/bye', goodbye)
-app.use(notfound);
-
-app.listen(3000);
+console.log('==== The server is running.');
