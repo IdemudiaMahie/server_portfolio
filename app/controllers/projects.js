@@ -6,7 +6,7 @@ module.exports.projectsList = async (req, res, next) => {
 
         res.json({
             success: true,
-            message: "Services list retrieved successfully.",
+            message: "Projects list retrieved successfully.",
             data: list
         });
     } catch (error) {
