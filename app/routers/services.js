@@ -5,8 +5,8 @@ let servicesController = require('../controllers/services');
 
 router.get('/', servicesController.servicesList);
 router.get('/:id', servicesController.getByID);
-router.post('/', servicesController.processAdd);
-router.put('/:id', servicesController.processEdit);
-router.delete('/:id', servicesController.performDelete);
+router.post('/', requireSignin, servicesController.processAdd);
+router.put('/:id', requireSignin, servicesController.processEdit);
+router.delete('/:id', requireSignin, servicesController.performDelete);
 
 module.exports = router;
